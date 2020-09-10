@@ -16,13 +16,30 @@ public class App {
         System.out.println("Hello");
         System.out.println("Программа загадала число, угадай его");
         Random random = new Random();
-        int myNumber = random.nextInt(5-0+1)+0;
+        int attempt = 0;
         Scanner scanner = new Scanner(System.in);
-        int GamerNumber = scanner.nextInt();
-        if(myNumber == GamerNumber) {
-            System.out.println("Ты выиграл");
-        } else {
-            System.out.println("Ты проиграл!Число было "+ myNumber);
-        }
+        System.out.println("Введите максимальный диапозон загадымаевого числа");
+        int max = scanner.nextInt();
+        System.out.println("Введите минимальный диапозон загадымаевого числа");
+        int min = scanner.nextInt();
+        System.out.println("Введите число");
+        
+        do {
+            int myNumber = random.nextInt(max-min+1)+min;
+            
+            int GamerNumber = scanner.nextInt();
+            if(myNumber == GamerNumber) {
+                System.out.println("Ты выиграл");
+                break;
+            } else {
+                if (attempt >=3 ){
+                    System.out.println("Ты проиграл!Число было "+ myNumber);
+                    break;
+                } else {
+                    System.out.println("Попробуй ещё раз");
+                }
+                attempt++;
+            }
+        }while(true);
     }
 }
