@@ -6,7 +6,7 @@
 package jptvr19game;
 
 import java.util.Scanner;
-
+import java.util.Random;
 /**
  *
  * @author pupil
@@ -15,7 +15,8 @@ public class App {
     public void run(){
         System.out.println("Hello");
         System.out.println("Программа загадала число, угадай его");
-        int myNumber = 2;
+        Random random = new Random();
+        int myNumber = random.nextInt(5-0+1)+0;
         Scanner scanner = new Scanner(System.in);
         int GamerNumber = scanner.nextInt();
         if(myNumber == GamerNumber) {
