@@ -22,8 +22,8 @@ public class App {
         int max = scanner.nextInt();
         System.out.println("Введите минимальный диапозон загадымаевого числа");
         int min = scanner.nextInt();
+        System.out.println("Программа загадала число от "+ min +" до "+max);
         System.out.println("Введите число");
-        
         do {
             int myNumber = random.nextInt(max-min+1)+min;
             
@@ -32,7 +32,7 @@ public class App {
                 System.out.println("Ты выиграл");
                 break;
             } else {
-                if (attempt >=3 ){
+                if (attempt >=2 ){
                     System.out.println("Ты проиграл!Число было "+ myNumber);
                     break;
                 } else {
